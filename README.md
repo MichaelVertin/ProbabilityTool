@@ -75,7 +75,7 @@ my_map.display()
 ```
 Nested ProbMaps
 ```
-# Setting every chance individually may be time-consuming
+# Calculating every individual chance may be time-consuming
 # Nested ProbMaps is the ability to set a chance to have a value of another ProbMap
 # Example: There is 50% chance to roll a d6, 25% chance to roll a d4, and a 25% chance that gaurantees 2
 # (Method 1 dooes not support using objects as dictionary keys)
