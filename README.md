@@ -12,7 +12,7 @@ from Probabilities.ProbMap_Tools import coin, dX, d4, d6, d10, d100
 Displaying the pre-made ProbMaps
 ```
 coin.display() # this will display .5 for 0 and .5 for 1, thus a 50% chance for head or tails
-d6.display() # .1888888 (or 1/6) for all values between 1 and 6
+d6.display() # .1666 (or 1/6) for all values between 1 and 6
 ```
 ProbMap math
 ```
