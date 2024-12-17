@@ -8,8 +8,7 @@ def dX(X):
     return result
 
 
-# coin = two-sided die
-coin = dX(2)
+coin = ProbMap({0:.5,1:.5})
 
 # generate common dice
 for die_value in [4,6,8,10,20,100]:

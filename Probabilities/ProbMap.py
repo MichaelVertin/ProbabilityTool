@@ -220,8 +220,8 @@ class ProbMap(dict):
         
         return result
 
-    def display_cumulative_table( self, instance_filter, 
-                                        amount_filter,
+    def display_cumulative_table( self, amount_filter,
+                                        instance_filter=[1], 
                                         amount_label = "units", 
                                         instance_label = "instances" ):
         # generate data
@@ -254,9 +254,9 @@ class ProbMap(dict):
         print(result)
 
     def display( self ):
-        print("Key map display")
+        print("Probability map display")
         for key,value in self.items():
-            print(f"{key}: {value}%")
+            print(f"{key}: {value}")
 
     # generate a random value using the chances
     def random( self ):
