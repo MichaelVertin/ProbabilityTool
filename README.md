@@ -14,7 +14,9 @@ Displaying the pre-made ProbMaps
 coin.display() # this will display .5 for 0 and .5 for 1, thus a 50% chance for head or tails
 d6.display() # .1666 (or 1/6) for all values between 1 and 6
 ```
-ProbMap math
+ProbMap Math:\
+Addition: O(M\*N)\
+Multiplication: O(M\*N\*log(N)))
 ```
 # adding the same ProbMap
 two_coins = coin + coin # add two coints
@@ -29,6 +31,7 @@ total = d4 * 4 + d6 * 2 # rolling four d4 and two d6
 total.display()
 ```
 A ProbMap Table will filter what information is displayed
+Display: O(N*X*Y), where N=len(ProbMap), X=max(instance_filter), Y=max(amount_filter)
 ```
 # two d6
 total = d6*2
@@ -62,6 +65,7 @@ instances         1         5        10        20
 The chance of getting at least 20 from 10d6 is 99.8, and the chance of getting at least 20 from 3d6 is 0.0%. 
 ```
 Custom ProbMaps
+O(N), where N=amount of values
 ```
 # Example: 50% chance to get 0, 25% chance to get 1, and 25% chance to get 5
 # Method 1: Initialize in the constructor
@@ -74,6 +78,7 @@ my_map[2] = .25 # Again, 0 will be automatically set
 my_map.display()
 ```
 Nested ProbMaps
+One ProbMap assignment: O(N), where N=len(assigned ProbMap)
 ```
 # Calculating every individual chance may be time-consuming
 # Nested ProbMaps is the ability to set a chance to have a value of another ProbMap
@@ -87,6 +92,7 @@ nested_map[2] = .25
 nested_map.display()
 ```
 RNG
+O(N), where N=len(ProbMap) (Not recommended for simple problems, such as one dice)
 ```
 # simulate a d100 100 times
 print([d100.random() for _ in range(100)])
