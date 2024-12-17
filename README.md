@@ -58,8 +58,31 @@ instances         1         5        10        20
      3 :  100.000%   98.148%   62.500%    0.000%
      5 :  100.000%  100.000%   98.380%   30.517%
     10 :  100.000%  100.000%  100.000%   99.852%
-# this shows the chances of getting a total of at least 1, 5, 10, and 20 using 1, 3, 5, or 10 d6. The chance of getting at least 20 from 10d6 is 99.8, and the chance of getting at least 20 from 3d6 is 0.0%. 
+# this shows the chances of getting a total of at least 1, 5, 10, and 20 using 1, 3, 5, or 10 d6. \
+The chance of getting at least 20 from 10d6 is 99.8, and the chance of getting at least 20 from 3d6 is 0.0%. 
 ```
-
-
+Custom ProbMaps
+```
+# Example: 50% chance to get 0, 25% chance to get 1, and 25% chance to get 5
+# Method 1: Initialize in the constructor
+my_map = ProbMap( {1:.25,5:.25} ) # Note that 0 will be automatically set to make the total equal to 1. 
+my_map.display()
+# Method 2: Initialize empty, set values later
+my_map = ProbMap()
+my_map[1] = .25
+my_map[2] = .25 # Again, 0 will be automatically set
+my_map.display()
+```
+Nested ProbMaps
+```
+# Setting every chance individually may be time-consuming
+# Nested ProbMaps is the ability to set a chance to have a value of another ProbMap
+# Example: There is 50% chance to roll a d6, 25% chance to roll a d4, and a 25% chance to roll nothing
+# (Method 1 dooes not support using objects as dictionary keys)
+# Method 2
+nested_map = ProbMap()
+nested_map[d6] = .5
+nested_map[d4] = .25
+nested_map.display()
+```
 
