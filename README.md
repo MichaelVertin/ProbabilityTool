@@ -64,8 +64,8 @@ instances         1         5        10        20
 # this shows the chances of getting a total of at least 1, 5, 10, and 20 using 1, 3, 5, or 10 d6. \
 The chance of getting at least 20 from 10d6 is 99.8, and the chance of getting at least 20 from 3d6 is 0.0%. 
 ```
-Custom ProbMaps
-O(N), where N=amount of values
+Custom ProbMaps\
+O(N), where N=amount of input values
 ```
 # Example: 50% chance to get 0, 25% chance to get 1, and 25% chance to get 5
 # Method 1: Initialize in the constructor
@@ -77,7 +77,7 @@ my_map[1] = .25
 my_map[2] = .25 # Again, 0 will be automatically set
 my_map.display()
 ```
-Nested ProbMaps
+Nested ProbMaps\
 One ProbMap assignment: O(N), where N=len(assigned ProbMap)
 ```
 # Calculating every individual chance may be time-consuming
@@ -91,7 +91,7 @@ nested_map[d4] = .25
 nested_map[2] = .25
 nested_map.display()
 ```
-RNG
+RNG\
 O(N), where N=len(ProbMap) (Not recommended for simple problems, such as one dice)
 ```
 # simulate a d100 100 times
